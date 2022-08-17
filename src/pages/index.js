@@ -27,9 +27,6 @@ const Index = () => {
   const editTodoHandler = (id) => {
     const newUpdateFind = todos.find((singleTodo) => singleTodo.id === id);
     setTodo({ id, name: newUpdateFind.name, desc: newUpdateFind.desc });
-    // const newUpdateFind = todos.map((item) =>
-    //   item.id === id ? { ...item, name: todo.name, desc: todo.desc } : item
-    // );
     setToggleSubmit(false);
   };
 
@@ -46,6 +43,7 @@ const Index = () => {
     });
     setTodos(dataUpdate);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataUpdate));
+    setToggleSubmit(true);
   };
 
   const deleteTodoHandler = (id) => {
