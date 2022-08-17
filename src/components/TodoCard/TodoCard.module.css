@@ -1,0 +1,31 @@
+.todoIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cardField {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardButton {
+  display: flex;
+  flex-direction: row;
+}
+
+.todoActionButton {
+  padding: 10px;
+  margin: 3px;
+  width: 55%;
+  align-self: center;
+  border: none;
+  border-radius: 6px;
+  color: var(--secondary-font-color);
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--main-background-color);
+  box-shadow: var(--main-box-shadow);
+}

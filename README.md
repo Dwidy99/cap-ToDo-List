@@ -1,3 +1,12 @@
+# OnlineStoreTheme1
+
+## What we have:
+
+- Create Data and store to LocalStorage
+- Read Data From LocalStorage
+- Delete Data from LocalStorage
+- UPdat Data from LocalStorage
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
