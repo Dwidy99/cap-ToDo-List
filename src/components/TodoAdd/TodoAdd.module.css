@@ -6,7 +6,8 @@ form {
 
 .input {
   flex: 1;
-  margin: 5px;
+  margin: 5px 0;
+  width: 100%;
   box-shadow: var(--main-background-color);
   border: solid 3px #333;
   border-radius: 6px;
@@ -18,7 +19,7 @@ form {
 
 .addButton {
   padding: 10px;
-  width: 55%;
+  width: 100%;
   align-self: center;
   border: none;
   border-radius: 6px;

@@ -4,6 +4,7 @@ import Navbar from "./../components/Navbar";
 import Container from "./../components/Container";
 import TodoAdd from "./../components/TodoAdd";
 import TodoList from "./../components/TodoList";
+import Info from "./../components/Info";
 
 const Index = () => {
   const LOCAL_STORAGE_KEY = "list-todos";
@@ -16,7 +17,9 @@ const Index = () => {
   });
 
   const addTodoHandler = (todo) => {
-    const newTodo = [{ id: uuidv4(), name: todo.name, desc: todo.desc }];
+    const newTodo = [
+      { id: uuidv4(), name: todo.name.trim(), desc: todo.desc.trim() },
+    ];
     setTodos([...todos, ...newTodo]);
     localStorage.setItem(
       LOCAL_STORAGE_KEY,
@@ -52,6 +55,12 @@ const Index = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedTodos));
   };
 
+  const deleteAll = () => {
+    const errEmpty = setTodos([]);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([]));
+    return errEmpty;
+  };
+
   useEffect(() => {
     const listTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     listTodos && setTodos(listTodos);
@@ -68,6 +77,9 @@ const Index = () => {
           addHandler={addTodoHandler}
           updateHandler={updateTodoHandler}
         />
+
+        <Info todosLength={todos.length} onDelete={() => deleteAll([])} />
+
         <TodoList
           todos={todos}
           deleteTodos={deleteTodoHandler}
